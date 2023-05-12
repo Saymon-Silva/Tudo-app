@@ -1,0 +1,66 @@
+<h1 id="tdp">
+  TUDO APP
+</h1>
+
+<input *ngIf="mostraInput"
+placeholder="Nome da tarefa" 
+[(ngModel)]="nomeTarefa.nome"
+(ngModelChange)="inputMudou($event)">
+<select [(ngModel)]="nomeTarefa.categoria">
+    <option value="TODO">TODO</option>
+    <option value="DOING">DOING</option>
+    <option value="DONE">DONE</option>
+</select>
+  <button (click)="cadastrarTarefas()"> cadastrar </button>
+  <hr>
+<div id="principal">
+  <div id="todo">
+<div  *ngFor="let tarefa of listaTarefa; index as indice">
+      <div *ngIf="tarefa.categoria=='TODO'">
+              <h4>
+                {{tarefa.nome}} <button (click)="removerTarefa(indice)">Rem</button>
+              </h4>
+              <select [(ngModel)]="tarefa.categoria" (change) = "mudar(indice)">
+                  <option value="TODO">TODO</option>
+                  <option value="DOING">DOING</option>
+                  <option value="DONE">DONE</option>
+              </select>
+          <hr>
+      </div>
+  </div>
+</div>
+
+<div id="doing">
+  <div  *ngFor="let tarefa of listaTarefa; index as indice">
+    <div *ngIf="tarefa.categoria=='DOING'">
+        <h4>
+          {{tarefa.nome}} <button (click)="removerTarefa(indice)">Rem</button>
+        </h4>
+        <select [(ngModel)]="tarefa.categoria" (change) = "mudar(indice)">
+          <option value="TODO">TODO</option>
+          <option value="DOING">DOING</option>
+          <option value="DONE">DONE</option>
+        </select>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div id="done">
+  <div  *ngFor="let tarefa of listaTarefa; index as indice">
+      <div *ngIf="tarefa.categoria=='DONE'">
+        <h4>
+          {{tarefa.nome}} <button (click)="removerTarefa(indice)">Rem</button>
+        </h4>
+        <select [(ngModel)]="tarefa.categoria" (change) = "mudar(indice)">
+          <option value="TODO">TODO</option>
+          <option value="DOING">DOING</option>
+          <option value="DONE">DONE</option>
+        </select>
+      <hr>
+      </div>
+  </div>
+</div>
+</div>
+
+

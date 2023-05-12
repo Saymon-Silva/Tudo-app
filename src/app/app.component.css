@@ -1,0 +1,23 @@
+#principal{
+    display: flex;
+    justify-content: space-around;
+}
+#todo{
+    width: 100%;
+    background-color: red;
+}
+#doing{
+    width: 100%;
+    background-color: goldenrod ;
+}
+#done{
+    width: 100%;
+    background-color: rgb(0, 255, 13);
+}
+#tdp{
+    background-color: black;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    display: flex;
+}

@@ -1,0 +1,15 @@
+<h1> cadastro de tarefas</h1>
+<hr>
+<input placeholder="Tarefa" [(ngModel)]="tarefa"/>
+<select *ngFor="let categoria of categorias">
+
+</select>
+<div style="display: flex; justify-content: space-between;">
+    <div *ngFor="let categoria of categorias">
+            {{categoria}}
+            <hr>
+            <div *ngFor="let tarefa os getTarefas">
+                {{tarefa.nome}}
+            </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>cadastro de categorias</h1>
+<input type="text" placeholder="nome" [(NgModel)]="nomeCategoria">
+<button (click)="cadastrarCategoria()">cadastrar</button>
+
+<div>
+    <div *ngFor="let categoria of categorias">
+        {{categoria}}
+
+    </div>
+</div>
