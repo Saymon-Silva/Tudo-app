@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
+/*
 interface Tarefas{
   nome: String,
   categoria: String
 }
+*/
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,7 @@ interface Tarefas{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+/*
   mostraInput: boolean = true;
 
   listaTarefa: Tarefas[] = this.defineLista();
@@ -27,7 +29,9 @@ export class AppComponent {
   nome: ' ',
   categoria: ''
   }
-
+*/
+ 
+/*
   cadastrarTarefas(): void {
     const tarefa: Tarefas = {
       nome: this.nomeTarefa.nome,
@@ -47,7 +51,5 @@ export class AppComponent {
   mudar(){
     localStorage.setItem("Tarefa", JSON.stringify(this.listaTarefa))
   }
-
+*/
 }
-
-

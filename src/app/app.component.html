@@ -1,7 +1,19 @@
 <h1 id="tdp">
   TUDO APP
 </h1>
+  <div>
+      <div>
+        <button class="botoes" routerLink="/tarefa">TAREFAS</button>
+      </div>
+      <div>
+        <button class="botoes" routerLink="/categoria">CATEGORIA</button>
+      </div>
+  </div>
+  <router-outlet></router-outlet>
 
+
+
+<!--
 <input *ngIf="mostraInput"
 placeholder="Nome da tarefa" 
 [(ngModel)]="nomeTarefa.nome"
@@ -14,8 +26,8 @@ placeholder="Nome da tarefa"
   <button (click)="cadastrarTarefas()"> cadastrar </button>
   <hr>
 <div id="principal">
-  <div id="todo">
-<div  *ngFor="let tarefa of listaTarefa; index as indice">
+  <div id="todo"><div  *ngFor="let tarefa of listaTarefa; index as indice">
+
       <div *ngIf="tarefa.categoria=='TODO'">
               <h4>
                 {{tarefa.nome}} <button (click)="removerTarefa(indice)">Rem</button>
@@ -62,5 +74,6 @@ placeholder="Nome da tarefa"
   </div>
 </div>
 </div>
+-->
 
 

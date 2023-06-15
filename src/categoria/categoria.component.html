@@ -1,10 +1,12 @@
-<h1>cadastro de categorias</h1>
-<input type="text" placeholder="nome" [(NgModel)]="nomeCategoria">
-<button (click)="cadastrarCategoria()">cadastrar</button>
-
-<div>
-    <div *ngFor="let categoria of categorias">
-        {{categoria}}
-
+<!DOCTYPE html>
+<html lang="en">
+    <h1>Cadastro de categorias</h1>
+    <hr>
+    <input type="text" placeholder="nome da categoria" [(ngModel)]="nome">
+    <button (click)="cadastrarCategoria(indice)">Cadastrar</button>
+    <div>
+        <div *ngFor="let categoria of categorias;index as indice">
+            {{categoria}} <button (click)="removerCategoria(indice)">Remover</button>
+        </div>
     </div>
-</div>
+</html>

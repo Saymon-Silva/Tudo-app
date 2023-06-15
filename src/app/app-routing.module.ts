@@ -1,20 +1,20 @@
 import { NgModule } from "@angular/core";
 import { Route, RouterModule } from "@angular/router";
 import { TarefaComponent } from "src/tarefa/tarefa.component";
-import { categoriaComponent } from "../categoria/categoria.component";
+import { CategoriaComponent } from "../categoria/categoria.component";
 
 const rotas: Route[] = [
     {
         path:'categoria',
-        component: categoriaComponent
+        component: CategoriaComponent
     },
     {
-        path:'tarefas',
+        path:'tarefa',
         component: TarefaComponent
     },
     {
         path:'',
-        redirectTo: 'tarefas',
+        redirectTo: 'tarefa',
         pathMatch: 'full'
     }
 ]

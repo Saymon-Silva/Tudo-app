@@ -1,15 +1,32 @@
-<h1> cadastro de tarefas</h1>
-<hr>
-<input placeholder="Tarefa" [(ngModel)]="tarefa"/>
-<select *ngFor="let categoria of categorias">
-
-</select>
-<div style="display: flex; justify-content: space-between;">
-    <div *ngFor="let categoria of categorias">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cadastro de tarefas</title>
+</head>
+<body>
+    <h1> Cadastro de tarefas</h1>
+    <hr>
+    <input type="text" placeholder="Nome da tarefa" [(ngModel)]="tarefa.nome">
+    <select [(ngModel)]="tarefa.categoria">
+        <option *ngFor="let categoria of categorias">
             {{categoria}}
-            <hr>
-            <div *ngFor="let tarefa os getTarefas">
+        </option>
+    </select>
+    <button (click)="cadastrarTarefas()">Adicionar</button>
+
+    <div *ngFor="let categoria of categorias">
+        <h2>{{categoria}}</h2>
+        <div *ngFor="let tarefa of tarefas; index as indice">
+            <div *ngIf="tarefa.categoria === categoria">
                 {{tarefa.nome}}
+                <select [(ngModel)]="tarefa.categoria"  (change)="alterarTarefa(tarefa,$event.target.value )">
+                    <option *ngFor="let categoria of categorias">
+                        {{categoria}}
+                    </option>
+                </select>
+                <button (click)="removerTarefa(indice)">Remover</button>
             </div>
+        </div>
     </div>
-</div>
+</body>
+</html>

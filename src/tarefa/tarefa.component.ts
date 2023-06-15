@@ -1,30 +1,53 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-interface Tarefa{
-    nome: String,
-    categoria:
+interface Tarefa {
+nome: string;
+categoria: string;
 }
 
 @Component({
-    template: '<h1> ola tarefa</h1>'
+selector: 'app-tarefa',
+templateUrl: './tarefa.component.html',
 })
-export class TarefaComponent{
+export class TarefaComponent implements OnInit {
 
-    categorias: String [] = [];
-    categoriaSelecionada = ' ';
-    nomeCategoria: String = '';
+mostraInput: boolean = true;
+categorias: string [] = [];
+tarefas: Tarefa[] = [];
+categoria: string = '';
+tarefa: Tarefa = {
+nome: '',
+categoria: ''
+};
 
-    ngOnInit(): void {
-        console.log('categorias iniciando');
-        this.categorias = JSON.parse(localStorage.getItem('categorias'))
-    }
-    cadastrarTarefa(): void{
-        this
-    }
-    getTarefas(categoria: String):Tarefa[]{
-        console.log(categoria);
-        return.this.tarefas.filter(tarefaCadastrada) {
+cadastrarTarefas(): void {
+const tarefa: Tarefa = {
+nome: this.tarefa.nome,
+categoria: this.tarefa.categoria
+};
+console.log(this.tarefa);
+this.tarefas.push(tarefa);
+localStorage.setItem('Tarefas', JSON.stringify(this.tarefas));
+this.tarefa.nome = '';
+this.tarefa.categoria = '';
+}
 
-        }
-    }
+alterarTarefa(tarefa: Tarefa): void {
+    localStorage.setItem('Tarefas', JSON.stringify(this.tarefas));
+  }
+  
+removerTarefa(indice: number): void {
+this.tarefas.splice(indice, 1);
+localStorage.setItem('Tarefas', JSON.stringify(this.tarefas));
+}
+
+ngOnInit(): void {
+this.tarefas = JSON.parse(localStorage.getItem('Tarefas')) || [];
+this.categorias = JSON.parse(localStorage.getItem('Categorias'))
+}
+
+mudar(): void {
+localStorage.setItem('Tarefas', JSON.stringify(this.tarefas));
+}
+
 }
