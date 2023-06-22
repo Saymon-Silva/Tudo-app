@@ -24,4 +24,5 @@ import { UserRepository } from 'src/repositories/user.repository';
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

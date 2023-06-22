@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from 'src/models/users';
-import { UserRepository } from 'src/repositories/user.repository';
+
 
 /*
 interface Tarefas{
@@ -16,19 +15,7 @@ interface Tarefas{
 })
 export class AppComponent {
 
-
-  userRepository: UserRepository;
-  private userId : string = 'joao';
-  private users: User[] = [];
-  private user: User | undefined
-
-  constructor(private useRepository: UserRepository){
-      console.log(this.userRepository.getUsers());
-      this.user = this.getUsuarioLogado();
-  }
-  private getUsuarioLogado(): User{
-    return this.users.find((user) => { return user.id === this.userId});
-  }
+}
 /*
   mostraInput: boolean = true;
 
@@ -68,4 +55,3 @@ export class AppComponent {
     localStorage.setItem("Tarefa", JSON.stringify(this.listaTarefa))
   }
 */
-}
