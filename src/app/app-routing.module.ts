@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Route, RouterModule } from "@angular/router";
 import { TarefaComponent } from "src/tarefa/tarefa.component";
 import { CategoriaComponent } from "../categoria/categoria.component";
+import { AuthGuardService } from "src/services/auth-guard.services";
 
 const rotas: Route[] = [
     {
@@ -10,7 +11,8 @@ const rotas: Route[] = [
     },
     {
         path:'tarefa',
-        component: TarefaComponent
+        component: TarefaComponent,
+        canActivate: [AuthGuardService]
     },
     {
         path:'',

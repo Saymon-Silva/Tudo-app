@@ -6,6 +6,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { categoriaModule } from 'src/categoria/categoria.module';
 import { TarefaModule } from 'src/tarefa/tarefa.module';
 import { UserRepository } from 'src/repositories/user.repository';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from 'src/services/auth-guard.services';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { UserRepository } from 'src/repositories/user.repository';
     FormsModule,
     AppRoutingModule,
     categoriaModule,
-    TarefaModule
+    TarefaModule,
+    HttpClientModule
     //ReactiveFormsModule
   ],
   providers: [
-    UserRepository
+    UserRepository,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

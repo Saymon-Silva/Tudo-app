@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/models/users';
 import { UserRepository } from 'src/repositories/user.repository';
 
+
 interface Tarefa {
 nome: string;
 categoria: string;
@@ -30,9 +31,11 @@ user!: User;
 constructor(
   private userRepository: UserRepository
 ) {
-  this.users = this.userRepository.getUsers();
-  this.user = this.getUsuarioLogado();
-  console.log(this.user);
+  userRepository.getUsers().subscribe({
+    next : (value) => {
+      console.log(value);
+    }
+  })
 }
   ngOnInit(): void {
     this.tarefas = JSON.parse(localStorage.getItem('Tarefas')) || [];
@@ -80,6 +83,7 @@ removerTarefa(indice : number): void {
 }
 
 hasPermission(permission: string): boolean {
+  console.log(this.user);
   return this.user.cardPermissions.some((cardPermission) => {
     return cardPermission === permission;
   });
